@@ -15,7 +15,7 @@ const Header = () => {
           ></Image>
         </a>
       </Link>
-      <nav className={styles.nav}>
+      <nav className={styles.nav} aria-label="Main Navigation">
         <ul id="#menu" className={styles.menu}>
           <li>
             <Link href="/">
@@ -23,18 +23,20 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/blog">
               <a>blog</a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/about">
               <a>about</a>
             </Link>
           </li>
-          <a href="#menu" className={styles.barCenter}>
-            <div className={styles.bar}></div>
-          </a>
+          <li className="menu-toggle" aria-label="Open the menu">
+            <a href="#menu" className={styles.barCenter} aria-hidden="true">
+              <div className={styles.bar}></div>
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
