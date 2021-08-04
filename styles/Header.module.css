@@ -1,0 +1,43 @@
+.header {
+  height: 10rem;
+  width: 100%;
+  background-color: var(--color-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+}
+
+.menu {
+  display: flex;
+}
+
+.barCenter {
+  position: absolute;
+  width: 35px;
+  right: 2rem;
+  display: none;
+}
+
+.barCenter::before,
+.barCenter::after,
+.bar {
+  background: #333;
+  display: block;
+  content: '';
+  height: 6px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+
+.barCenter:hover:before {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.barCenter:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+.barCenter:hover div {
+  transform: scale(0);
+}
