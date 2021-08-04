@@ -14,7 +14,7 @@ body {
   font-family: var(--font-primary);
   font-size: 2rem;
   box-sizing: border-box;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 ul {
@@ -41,8 +41,11 @@ a {
   --gap: 4rem;
   --letter-spacing: 0.12em;
 
-  /* border */
+  /* box sizing */
   --shadow-inset-sm: inset 0px -2px 0px 0px #000000;
-  --shadow-inset-md: inset 0px -4px 0px 0px #000000;
+  --shadow-inset-md: inset 0px -10px 0px 0px #000000;
+
+  /* border */
+  --border: 2px solid var(--color-grey);
 }
 
