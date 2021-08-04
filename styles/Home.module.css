@@ -1,0 +1,47 @@
+.heroContainer {
+    background-color: var(--color-main);
+    background-image: url("/images/hero-bg.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-size: 390px 420px;
+    height: 60vh;
+    border-bottom: var(--border);
+    overflow: hidden;
+}
+
+.heroLeft {
+    margin-left: var(--gap);
+    max-width: 60%;
+    height: 100%;
+    padding-top: 3rem;
+}
+
+.mainTitle,
+.secondaryTitle {
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+}
+
+.mainTitle {
+    font-family: var(--font-hero);
+    font-size: 5rem;
+}
+
+.secondaryTitle {
+    margin-top: 2rem;
+    line-height: 1.7;
+}
+
+
+.cta {
+    border: var(--border);
+    background-color: var(--color-btn);
+    text-transform: uppercase;
+    font-family: inherit;
+    letter-spacing: var(--letter-spacing);
+    border-radius: 50px;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    margin-top: 5rem;
+}
