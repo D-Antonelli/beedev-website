@@ -1,12 +1,12 @@
 .header {
-  height: 10rem;
+  height: 10.6rem;
   width: 100%;
   background-color: var(--color-main);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--gap);
-  box-shadow: var(--shadow-inset-sm);
+  border-bottom: var(--border);
 }
 
 .nav {
