@@ -46,7 +46,6 @@ const Blog = ({ allPosts: { edges } }) => (
 
 export default Blog;
 
-//function will be called by Next.js during build time
 export async function getStaticProps() {
   const allPosts = await getAllPosts();
   return {
