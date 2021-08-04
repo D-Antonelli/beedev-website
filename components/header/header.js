@@ -32,13 +32,16 @@ const Header = () => {
               <a>about</a>
             </Link>
           </li>
-          <li className="menu-toggle" aria-label="Open the menu">
-            <a href="#menu" className={styles.barCenter} aria-hidden="true">
-              <div className={styles.bar}></div>
-            </a>
-          </li>
         </ul>
       </nav>
+      <a
+        href="#menu"
+        className={styles.menuToggle}
+        aria-label="Open the menu"
+        aria-hidden="true"
+      >
+        <div className={styles.bar}></div>
+      </a>
     </header>
   );
 };
