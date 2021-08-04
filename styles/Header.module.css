@@ -5,24 +5,49 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 4rem;
+  padding: 0 var(--gap);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav {
+  align-self: stretch;
 }
 
 .menu {
   display: flex;
+  height: 100%;
 }
 
-.barCenter {
+.menu > * {
+  align-self: stretch;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: var(--letter-spacing);
+  display: flex;
+  align-items: center;
+  transition: .1s ease-in-out;
+}
+
+.menu > *:hover {
+  box-shadow: var(--shadow-md);
+}
+
+
+.menu > *:not(:first-child) {
+  margin-left: 4.8rem;
+}
+
+.menuToggle {
   position: absolute;
   width: 35px;
-  right: 2rem;
+  right: var(--gap);
   display: none;
 }
 
-.barCenter::before,
-.barCenter::after,
+.menuToggle::before,
+.menuToggle::after,
 .bar {
-  background: #333;
+  background: var(--color-grey);
   display: block;
   content: '';
   height: 6px;
@@ -30,14 +55,14 @@
   transition: 0.5s;
 }
 
-.barCenter:hover:before {
+.menuToggle:hover:before {
   transform: translateY(12px) rotate(135deg);
 }
 
-.barCenter:hover:after {
+.menuToggle:hover:after {
   transform: translateY(-12px) rotate(-135deg);
 }
 
-.barCenter:hover div {
+.menuToggle:hover div {
   transform: scale(0);
 }
