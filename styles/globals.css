@@ -30,9 +30,19 @@ a {
   /* colors */
   --color-main: #ffd900;
   --color-btn: #c4c4c4;
+  --color-grey: #333;
 
   /* fonts */
   --font-hero: 'Bai Jamjuree', sans-serif;
   --font-primary: 'Roboto', sans-serif;
-  --font-secondary: 'Roboto Mono', monospace; 
+  --font-secondary: 'Roboto Mono', monospace;
+
+  /* spacing */
+  --gap: 4rem;
+  --letter-spacing: 0.12em;
+
+  /* border */
+  --shadow-inset-sm: inset 0px -2px 0px 0px #000000;
+  --shadow-inset-md: inset 0px -4px 0px 0px #000000;
 }
+
