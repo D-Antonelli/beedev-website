@@ -1,0 +1,36 @@
+.heroContainer {
+    background-color: var(--color-main);
+    background-image: url("/images/hero-bg.png");
+    background-repeat: no-repeat;
+    background-position-x: 97.5%;
+    background-position-y: center;
+    background-size: 390px 420px;
+    padding: 0 var(--gap);
+    height: 61vh;
+    border-bottom: var(--border);
+    overflow: hidden;
+}
+
+.heroLeft {
+    max-width: 60%;
+    height: 100%;
+    padding-top: 3rem;
+}
+
+.banner,
+.subBanner {
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+}
+
+.banner {
+    font-family: var(--font-hero);
+    font-size: 5rem;
+}
+
+.subBanner {
+    margin-top: 2rem;
+    line-height: 1.7;
+}
+
+
