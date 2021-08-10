@@ -12,7 +12,7 @@ html {
 
 body {
   font-family: var(--font-primary);
-  font-size: 2rem;
+  font-size: var(--fs-standart);
   box-sizing: border-box;
   line-height: 1.5;
 }
@@ -36,9 +36,16 @@ a {
   --font-hero: 'Bai Jamjuree', sans-serif;
   --font-primary: 'Roboto', sans-serif;
   --font-secondary: 'Roboto Mono', monospace;
+  --font-title: 'Spartan', sans-serif;
+
+  /* font-size */
+  --fs-standart: 2.5rem;
+  --fs-lg: 3rem;
 
   /* spacing */
   --gap: 4rem;
+  --text-spacing--lg: 6.5rem;
+  --text-spacing--sm: 3rem;
   --letter-spacing: 0.12em;
 
   /* box sizing */
@@ -47,5 +54,6 @@ a {
 
   /* border */
   --border: 2px solid var(--color-grey);
+  --border-section: 1px solid rgba(0, 0, 0, 0.43);
 }
 
