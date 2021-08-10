@@ -1,0 +1,11 @@
+.cta {
+    border: var(--border);
+    background-color: var(--color-btn);
+    text-transform: uppercase;
+    font-family: inherit;
+    letter-spacing: var(--letter-spacing);
+    border-radius: 50px;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    margin-top: 5rem;
+}
