@@ -1,6 +1,6 @@
 import styles from '../styles/Articles.module.css';
 
-const Articles = ({ children }) => {
+const LatestArticles = ({ children }) => {
   return (
     <section className={styles.articlesSection}>
       <div className={styles.articlesContainer}>
@@ -11,4 +11,4 @@ const Articles = ({ children }) => {
   );
 };
 
-export default Articles;
+export default LatestArticles;
