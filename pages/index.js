@@ -4,7 +4,7 @@ import Hero from '../components/hero';
 import ArticleGrid from '../components/article-grid';
 import styles from '../styles/Home.module.css';
 import { getRecentPosts } from '../lib/api';
-import LatestArticles from '../components/articles';
+import LatestArticles from '../components/latest-articles';
 
 const Home = ({ recentPosts }) => {
   const posts = recentPosts.edges;
