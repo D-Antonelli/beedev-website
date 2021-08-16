@@ -1,0 +1,11 @@
+.flexContainer {
+  display: flex;
+}
+
+.flexContainer > * {
+  width: 50%;
+}
+
+.flexContainer > *:not(:last-child) {
+  border-right: var(--border-section);
+}

@@ -1,0 +1,7 @@
+.articleGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: var(--text-spacing--lg);
+    column-gap: var(--text-spacing--lg);
+}
+

@@ -1,0 +1,14 @@
+.articleThumb {
+    width: 100%;
+    height: 28rem;
+    margin-bottom: var(--text-spacing--sm);
+    cursor: pointer;
+}
+
+.articleContent {
+  font-size: var(--fs-standart);
+  padding: 0 var(--text-spacing--lg);
+  text-align: center;
+  font-weight: 400;
+  cursor: pointer;
+}
