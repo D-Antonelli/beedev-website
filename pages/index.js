@@ -4,10 +4,11 @@ import Hero from '../components/hero';
 import ArticleGrid from '../components/article-grid';
 import styles from '../styles/Home.module.css';
 import { getRecentPosts } from '../lib/api';
-import LatestArticles from '../components/latest-articles';
+import ArticleLayout from '../components/article-layout';
+import TrendingList from '../components/trending-list';
+import FlexContainer from '../components/flex-container';
 
-const Home = ({ recentPosts }) => {
-  const posts = recentPosts.edges;
+const Home = ({ recentPosts: { edges } }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,9 +18,16 @@ const Home = ({ recentPosts }) => {
       <Header />
       <main>
         <Hero />
-        <LatestArticles>
-          <ArticleGrid posts={posts}/>
-        </LatestArticles>
+        <ArticleLayout title="latest articles">
+          <ArticleGrid posts={edges} />
+        </ArticleLayout>
+        <FlexContainer>
+          <ArticleLayout title="trending">
+            <TrendingList />
+            {/* pull out articles with the most comments */}
+          </ArticleLayout>
+          <ArticleLayout title="tags"></ArticleLayout>
+        </FlexContainer>
       </main>
       <footer className={styles.footer}></footer>
     </div>
