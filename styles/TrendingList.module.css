@@ -1,0 +1,39 @@
+.trendingList > *:not(:last-child) {
+    margin-bottom: var(--text-spacing--lg);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 10rem auto;
+  grid-template-rows: max-content auto;
+  grid-template-areas:
+    'a b'
+    'c d';
+  row-gap: 1rem;
+}
+
+.number {
+  margin-right: var(--text-spacing-md);
+  font-family: var(--font-title);
+  font-size: var(--fs-lg);
+  letter-spacing: var(--letter-spacing);
+}
+
+.title {
+    font-weight: 700;
+}
+
+.comment {
+    grid-area: d;
+    color: var(--color-btn);
+    letter-spacing: var(--letter-spacing);
+}
+
+.icon {
+    margin-right: 1.2rem;
+    vertical-align: middle;
+}
+
+.count {
+    margin-right: .9rem;
+}

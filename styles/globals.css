@@ -45,7 +45,8 @@ a {
   /* spacing */
   --gap: 4rem;
   --text-spacing--lg: 6.5rem;
-  --text-spacing--sm: 3rem;
+  --text-spacing-md: 5rem;
+  --text-spacing--sm: 2.5rem;
   --letter-spacing: 0.12em;
 
   /* box sizing */
