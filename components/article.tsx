@@ -10,7 +10,7 @@ type ArticleType = {
 
 const Article = ({ src, alt, title, slug }: ArticleType) => {
   return (
-    <div className={styles}>
+    <div>
       <Link href={`/blog/${slug}`} passHref>
         <img src={src} alt={alt} className={styles.articleThumb} />
       </Link>
