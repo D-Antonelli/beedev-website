@@ -1,12 +1,21 @@
 import Head from 'next/head';
+
+/* components */
 import Header from '../components/header';
 import Hero from '../components/hero';
 import ArticleGrid from '../components/article-grid';
-import styles from '../styles/Home.module.css';
-import { getPostsWithTopComments, getRecentPosts } from '../lib/api';
 import ArticleLayout from '../components/article-layout';
 import TrendingList from '../components/trending-list';
 import FlexContainer from '../components/flex-container';
+import TagList from '../components/tag-list';
+import tagContents from '../contents/tags';
+
+/* style */
+import styles from '../styles/Home.module.css';
+
+/* api */
+import { getPostsWithTopComments, getRecentPosts } from '../lib/api';
+
 
 const Home = ({ recentPosts, postsWithTopComments }) => {
   const recent = recentPosts.edges;
@@ -27,7 +36,9 @@ const Home = ({ recentPosts, postsWithTopComments }) => {
           <ArticleLayout title="trending">
             <TrendingList posts={trending} />
           </ArticleLayout>
-          <ArticleLayout title="tags"></ArticleLayout>
+          <ArticleLayout title="tags">
+            <TagList list={tagContents}/>
+          </ArticleLayout>
         </FlexContainer>
       </main>
       <footer className={styles.footer}></footer>
