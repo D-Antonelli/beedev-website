@@ -31,6 +31,8 @@ a {
   --color-main: #ffd900;
   --color-btn: #c4c4c4;
   --color-grey: #333;
+  --color-black: #000;
+  --color-white: #fff;
 
   /* fonts */
   --font-hero: 'Bai Jamjuree', sans-serif;
@@ -56,5 +58,7 @@ a {
   /* border */
   --border: 2px solid var(--color-grey);
   --border-section: 1px solid rgba(0, 0, 0, 0.43);
-}
 
+  /* padding */
+  --padding-section: var(--text-spacing--lg) var(--gap);
+}
