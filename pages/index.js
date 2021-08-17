@@ -3,12 +3,14 @@ import Header from '../components/header';
 import Hero from '../components/hero';
 import ArticleGrid from '../components/article-grid';
 import styles from '../styles/Home.module.css';
-import { getRecentPosts } from '../lib/api';
+import { getPostsWithTopComments, getRecentPosts } from '../lib/api';
 import ArticleLayout from '../components/article-layout';
 import TrendingList from '../components/trending-list';
 import FlexContainer from '../components/flex-container';
 
-const Home = ({ recentPosts: { edges } }) => {
+const Home = ({ recentPosts, postsWithTopComments }) => {
+  const recent = recentPosts.edges;
+  const trending = postsWithTopComments.edges;
   return (
     <div className={styles.container}>
       <Head>
@@ -19,12 +21,11 @@ const Home = ({ recentPosts: { edges } }) => {
       <main>
         <Hero />
         <ArticleLayout title="latest articles">
-          <ArticleGrid posts={edges} />
+          <ArticleGrid posts={recent} />
         </ArticleLayout>
         <FlexContainer>
           <ArticleLayout title="trending">
-            <TrendingList />
-            {/* pull out articles with the most comments */}
+            <TrendingList posts={trending} />
           </ArticleLayout>
           <ArticleLayout title="tags"></ArticleLayout>
         </FlexContainer>
@@ -38,9 +39,11 @@ export default Home;
 
 export async function getStaticProps() {
   const recentPosts = await getRecentPosts();
+  const postsWithTopComments = await getPostsWithTopComments();
   return {
     props: {
       recentPosts,
+      postsWithTopComments,
     },
   };
 }
