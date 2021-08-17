@@ -1,4 +1,4 @@
-import styles from '../styles/Articles.module.css';
+import styles from '../styles/ArticleLayout.module.css';
 
 const ArticleLayout = ({ title, children }) => (
   <section className={styles.articlesSection}>
