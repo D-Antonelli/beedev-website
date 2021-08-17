@@ -1,20 +1,21 @@
-import styles from "../styles/TrendingList.module.css";
-import TrendingListItem from "./trending-list-item";
+import styles from '../styles/TrendingList.module.css';
+import TrendingListItem from './trending-list-item';
+import numberFormatter from '../utils/number-formatter';
 
-const TrendingList = (props) => (
-  <div className={styles.trendingList}>
-    <TrendingListItem
-      number="01"
-      title="Top 20 JavaScript tips and tricks to increase your Speed and Efficiency"
-      count="6"
-    />
-    <TrendingListItem
-      number="02"
-      title="Top 20 JavaScript tips and tricks to increase your Speed and Efficiency Top 20 JavaScript tips"
-      count="4"
-    />
-  </div>
-);
+const TrendingList = ({ posts }) => {
+  return (
+    <div className={styles.trendingList}>
+      {posts.map(({ node }, index) => (
+        <TrendingListItem
+          key={node.id}
+          number={numberFormatter(index + 1)}
+          title={node.title}
+          count={node.commentCount}
+          slug={node.slug}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default TrendingList;
-
