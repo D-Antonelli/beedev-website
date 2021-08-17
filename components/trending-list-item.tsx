@@ -1,11 +1,19 @@
 import styles from '../styles/TrendingList.module.css';
+import Link from 'next/link';
 
-const TrendingListItem = ({number, title, count}) => (
+type ListType = {
+  number: string,
+  title: string,
+  count: number,
+  slug: string
+}
+
+const TrendingListItem = ({ number, title, count, slug }: ListType) => (
   <div className={styles.gridContainer}>
     <p className={styles.number}>{number}</p>
-    <p className={styles.title}>
-      {title}
-    </p>
+    <Link href={`/blog/${slug}`} passHref>
+      <p className={styles.title}>{title}</p>
+    </Link>
     <p className={styles.comment}>
       <span className={styles.icon}>
         <svg
