@@ -13,5 +13,5 @@
 }
 
 .articlesContainer {
-    padding: var(--text-spacing--lg) var(--gap);
+    padding: var(--padding-section);
 }
