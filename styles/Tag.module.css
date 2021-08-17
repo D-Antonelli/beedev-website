@@ -1,0 +1,12 @@
+.tag {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: var(--border-section);
+    letter-spacing: var(--letter-spacing);
+    margin: 0 2.2rem 2.2rem 0;
+}
+
+.hash {
+    color: var(--color-btn);
+    margin-right: 1rem;
+}
