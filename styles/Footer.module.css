@@ -1,0 +1,41 @@
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--padding-section);
+}
+
+.credits > *:not(:last-child) {
+    margin-bottom: var(--text-spacing-md);
+}
+
+.credits {
+    width: 50%;
+    margin: 0 auto var(--text-spacing--lg) auto;
+}
+
+.creditsTitle {
+    font-size: var(--fs-lg);
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: var(--letter-spacing);
+}
+
+.creditsBody {
+    font-size: var(--fs-standart);
+    font-weight: normal;
+}
+
+.social > * {
+    display: inline-block;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.social > *:not(:last-child) {
+    margin-right: var(--text-spacing--sm);
+}
+
+.copyright {
+    font-size: 1.5rem;
+}
