@@ -15,7 +15,7 @@ const Article = ({ src, alt, title, slug }: ArticleType) => {
         <img src={src} alt={alt} className={styles.articleThumb} />
       </Link>
       <Link href={`/blog/${slug}`} passHref>
-        <h2 className={styles.articleContent}>{title}</h2>
+        <h3 className={styles.articleContent}>{title}</h3>
       </Link>
     </div>
   );
