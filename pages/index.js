@@ -1,3 +1,4 @@
+/* next js */
 import Head from 'next/head';
 
 /* components */
@@ -8,6 +9,9 @@ import ArticleLayout from '../components/article-layout';
 import TrendingList from '../components/trending-list';
 import FlexContainer from '../components/flex-container';
 import TagList from '../components/tag-list';
+import Footer from '../components/footer';
+
+/* contents */
 import tagContents from '../contents/tags';
 
 /* style */
@@ -37,11 +41,11 @@ const Home = ({ recentPosts, postsWithTopComments }) => {
             <TrendingList posts={trending} />
           </ArticleLayout>
           <ArticleLayout title="tags">
-            <TagList list={tagContents}/>
+            <TagList list={tagContents} />
           </ArticleLayout>
         </FlexContainer>
       </main>
-      <footer className={styles.footer}></footer>
+      <Footer/>
     </div>
   );
 };
