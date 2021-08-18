@@ -11,16 +11,16 @@ type ListType = {
 
 const TrendingListItem = ({ number, title, count, slug }: ListType) => (
   <div className={styles.gridContainer}>
-    <p className={styles.number}>{number}</p>
+    <span className={styles.number}>{number}</span>
     <Link href={`/blog/${slug}`} passHref>
-      <p className={styles.title}>{title}</p>
+      <h3 className={styles.title}>{title}</h3>
     </Link>
-    <p className={styles.comment}>
+    <div className={styles.comment}>
       <span className={styles.icon}>
         <CommentSvg/>
       </span>
       <span className={styles.count}>{count}</span>comments
-    </p>
+    </div>
   </div>
 );
 
