@@ -1,11 +1,10 @@
 .header {
   height: 10.6rem;
   width: 100%;
-  background-color: var(--color-main);
+  background-color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--gap);
   border-bottom: var(--border);
 }
-
