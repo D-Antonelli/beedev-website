@@ -1,0 +1,57 @@
+.nav {
+  align-self: stretch;
+}
+
+.menu {
+  display: flex;
+  height: 100%;
+}
+
+.menu > * {
+  align-self: stretch;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: var(--letter-spacing);
+  display: flex;
+  align-items: center;
+  transition: .1s ease-in-out;
+}
+
+.menu > *:hover {
+  box-shadow: var(--shadow-inset-md);
+}
+
+
+.menu > *:not(:first-child) {
+  margin-left: 4.8rem;
+}
+
+.menuToggle {
+  position: absolute;
+  width: 35px;
+  right: var(--gap);
+  display: none;
+}
+
+.menuToggle::before,
+.menuToggle::after,
+.bar {
+  background: var(--color-grey);
+  display: block;
+  content: '';
+  height: 6px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+
+.menuToggle:hover:before {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.menuToggle:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+.menuToggle:hover div {
+  transform: scale(0);
+}
