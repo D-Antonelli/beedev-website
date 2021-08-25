@@ -1,16 +1,21 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import styles from '../styles/Header.module.css';
+import mainStyle from '../styles/Header.module.css';
+import navStyles from '../styles/Navigation.module.css';
+import lightStyle from '../styles/HeaderLight.module.css';
 import LogoSvg from '../svg/logo';
 
-const Header = () => {
+type PropsType = {
+  theme?: string
+}
+
+const Header = ({ theme }: PropsType) => {
   return (
-    <header className={styles.header}>
+    <header className={theme === 'light' ? lightStyle.header : mainStyle.header}>
       <Link href="/" passHref>
-        <LogoSvg/>
+        <LogoSvg />
       </Link>
-      <nav className={styles.nav} aria-label="Main Navigation">
-        <ul id="#menu" className={styles.menu}>
+      <nav className={navStyles.nav} aria-label="Main Navigation">
+        <ul id="#menu" className={navStyles.menu}>
           <li>
             <Link href="/" passHref>
               home
@@ -30,11 +35,11 @@ const Header = () => {
       </nav>
       <a
         href="#menu"
-        className={styles.menuToggle}
+        className={navStyles.menuToggle}
         aria-label="Open the menu"
         aria-hidden="true"
       >
-        <div className={styles.bar}></div>
+        <div className={navStyles.bar}></div>
       </a>
     </header>
   );
