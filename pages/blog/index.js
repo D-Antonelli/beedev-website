@@ -2,19 +2,18 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-// data
+/* data */
 import { getAllPosts } from '../../lib/api';
 
-// styles
+/* styles */
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
 
+/* components */
+import Layout from '../../components/layout';
+
 const Blog = ({ allPosts: { edges } }) => (
-  <div className={styles.container}>
-    <Head>
-      <title>Blog articles page</title>
-      <link rel="icon" href="/favicon.ico"></link>
-    </Head>
+  <Layout theme="light">
     <main className="styles.main">
       <h1 className={styles.title}>Latest blog articles</h1>
       <hr />
@@ -40,7 +39,7 @@ const Blog = ({ allPosts: { edges } }) => (
         ))}
       </section>
     </main>
-  </div>
+  </Layout>
 );
 
 export default Blog;
