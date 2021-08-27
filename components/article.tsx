@@ -1,18 +1,26 @@
-import styles from '../styles/Article.module.css';
+/* next.js */
 import Link from 'next/link';
 
-type ArticleType = {
-  src: string;
-  alt: string;
-  title: string;
-  slug: string;
-};
+/* styles */
+import home from '../styles/Article.module.css';
+import blog from '../styles/BlogArticle.module.css';
 
-const Article = ({ src, alt, title, slug }: ArticleType) => {
+const Article = ({
+  post: {
+    featuredImage: {
+      node: { altText, mediaItemUrl },
+    },
+    title,
+    slug,
+  },
+  blogPage,
+}) => {
+  const styles = blogPage ? blog: home;
+
   return (
     <div>
       <Link href={`/blog/${slug}`} passHref>
-        <img src={src} alt={alt} className={styles.articleThumb} />
+        <img src={mediaItemUrl} alt={altText} className={styles.articleThumb} />
       </Link>
       <Link href={`/blog/${slug}`} passHref>
         <h3 className={styles.articleContent}>{title}</h3>

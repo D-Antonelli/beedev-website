@@ -4,13 +4,10 @@ import navStyles from '../styles/Navigation.module.css';
 import lightStyle from '../styles/HeaderLight.module.css';
 import LogoSvg from '../svg/logo';
 
-type PropsType = {
-  theme?: string
-}
 
-const Header = ({ theme }: PropsType) => {
+const Header = ({ theme }) => {
   return (
-    <header className={theme === 'light' ? lightStyle.header : mainStyle.header}>
+    <header className={theme ? lightStyle.header : mainStyle.header}>
       <Link href="/" passHref>
         <LogoSvg />
       </Link>

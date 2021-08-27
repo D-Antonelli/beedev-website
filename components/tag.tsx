@@ -1,10 +1,10 @@
 import styles from '../styles/Tag.module.css';
 
-type Tag = {
+type PropsType = {
   name: string;
 };
 
-const Tag = ({ name }: Tag) => (
+const Tag = ({ name }: PropsType) => (
   <div className={styles.tag}>
     <span className={styles.hash}>#</span>
     {name}
