@@ -42,13 +42,18 @@ a {
 
   /* font-size */
   --fs-standart: 2.5rem;
+  --fs-sm: 2rem;
   --fs-lg: 3rem;
+  --fs-m-lg: 4.4rem;
+  --fs-xl: 5.4rem;
 
   /* spacing */
   --gap: 4rem;
+  --text-spacing--xl: 8rem;
   --text-spacing--lg: 6.5rem;
   --text-spacing-md: 5rem;
   --text-spacing--sm: 2.5rem;
+  --text-spacing--xs: 2rem;
   --letter-spacing: 0.12em;
 
   /* box sizing */
