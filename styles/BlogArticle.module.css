@@ -1,0 +1,12 @@
+.articleThumb {
+  width: 100%;
+  height: 17.6rem;
+  margin-bottom: var(--text-spacing--xs);
+  cursor: pointer;
+}
+
+.articleContent {
+  font-size: var(--fs-sm);
+  font-weight: normal;
+  cursor: pointer;
+}
