@@ -5,13 +5,13 @@ import Link from 'next/link';
 import styles from '../styles/Blog.module.css';
 
 /* interface */
-import Props from '../interfaces/PropsType';
+import Post from '../interfaces/Post';
 
-interface PropsWithExcerpt extends Props {
+interface PostWithExtension extends Post {
   excerpt: string
 }
 
-const HeroPost = ({ slug, url, alt, title, excerpt }: PropsWithExcerpt) => (
+const HeroPost = ({ slug, url, alt, title, excerpt }: PostWithExtension) => (
   <div className={styles.heroPostContainer}>
     <Link href={`/blog/${slug}`} passHref>
       <img src={url} alt={alt} className={styles.heroImage} />

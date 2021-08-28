@@ -7,15 +7,15 @@ import TrendingListItem from './trending-list-item';
 /* util */
 import numberFormatter from '../utils/number-formatter';
 
-/* props */
-import PropsType from '../interfaces/PropsType';
+/* type */
+import Post from '../interfaces/Post';
 
-interface PropsWithExtension extends PropsType {
+interface PostWithExtension extends Post {
   id: string;
   commentCount: string;
 }
 
-const TrendingList = ({ posts }: { posts: { node: PropsWithExtension }[] }) => {
+const TrendingList = ({ posts }: { posts: { node: PostWithExtension }[] }) => {
   return (
     <div className={styles.trendingList}>
       {posts.map(({ node }, index) => (

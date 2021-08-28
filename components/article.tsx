@@ -6,13 +6,13 @@ import home from '../styles/Article.module.css';
 import blog from '../styles/BlogArticle.module.css';
 
 /* interface */
-import Props from '../interfaces/PropsType';
+import Post from '../interfaces/Post';
 
-interface PropsWithBlogPage extends Props {
+interface Props {
   blogPage?: boolean;
-} 
+}
 
-const Article = ({alt, url, title, slug, blogPage}: PropsWithBlogPage) => {
+const Article = ({alt, url, title, slug, blogPage}: Post & Props) => {
   const styles = blogPage ? blog: home;
 
   return (

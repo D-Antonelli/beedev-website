@@ -6,9 +6,9 @@ import blog from '../styles/BlogArticleGrid.module.css';
 import Article from './article';
 
 /* types */
-import PropsType from '../interfaces/PropsType';
+import Post from '../interfaces/Post';
 
-interface PropsWithExtension extends PropsType {
+interface PostWithExtension extends Post {
   id: string;
   featuredImage?: { node?: { altText?: string; mediaItemUrl?: string } };
 }
@@ -17,7 +17,7 @@ const ArticleGrid = ({
   posts,
   blogPage,
 }: {
-  posts: { node: PropsWithExtension }[];
+  posts: { node: PostWithExtension }[];
   blogPage?: boolean;
 }) => {
   const styles = blogPage ? blog : home;
