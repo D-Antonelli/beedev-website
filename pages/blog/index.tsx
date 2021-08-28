@@ -33,7 +33,7 @@ const Blog = ({ allPosts: { edges } }) => {
         <section className={styles.allArticlesSection}>
           <div className={styles.allArticlesContainer}>
             <h2 className={styles.allArticlesTitle}>All articles</h2>
-            {morePosts && <ArticleGrid posts={morePosts} blogPage />}
+            {morePosts && <ArticleGrid posts={morePosts} blogPage={true} />}
           </div>
         </section>
       </main>
