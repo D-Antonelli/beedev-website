@@ -5,15 +5,14 @@ import Link from 'next/link';
 import home from '../styles/Article.module.css';
 import blog from '../styles/BlogArticle.module.css';
 
-type PropType = {
-  slug: string;
-  url: string;
-  alt: string;
-  title: string;
-  blogPage: boolean;
-};
+/* interface */
+import Props from '../interfaces/PropsType';
 
-const Article = ({alt, url, title, slug, blogPage}: PropType) => {
+interface PropsWithBlogPage extends Props {
+  blogPage?: boolean;
+} 
+
+const Article = ({alt, url, title, slug, blogPage}: PropsWithBlogPage) => {
   const styles = blogPage ? blog: home;
 
   return (
