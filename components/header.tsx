@@ -5,7 +5,7 @@ import lightStyle from '../styles/HeaderLight.module.css';
 import LogoSvg from '../svg/logo';
 
 
-const Header = ({ theme }) => {
+const Header = ({ theme }: {theme?: boolean}) => {
   return (
     <header className={theme ? lightStyle.header : mainStyle.header}>
       <Link href="/" passHref>
