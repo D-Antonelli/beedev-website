@@ -5,17 +5,19 @@ import blog from '../styles/BlogArticleGrid.module.css';
 /* components */
 import Article from './article';
 
-type Props = {
-  posts: any;
-  blogPage?: boolean;
-};
-
-const ArticleGrid = ({ posts, blogPage }: Props) => {
+const ArticleGrid = ({ posts, blogPage }) => {
   const styles = blogPage ? blog : home;
   return (
     <div className={styles.articleGrid}>
       {posts?.map(({ node }) => (
-        <Article key={node.id} blogPage={blogPage} post={node} />
+        <Article
+          key={node.id}
+          alt={node.featuredImage?.node.altText}
+          url={node.featuredImage?.node.mediaItemUrl}
+          title={node.title}
+          slug={node}
+          blogPage={blogPage}
+        />
       ))}
     </div>
   );
