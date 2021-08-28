@@ -8,6 +8,7 @@ import { getAllPostsWithSlug, getPost } from '../../lib/api';
 //styles
 import styles from '../../styles/Home.module.css';
 import blogStyles from '../../styles/Blog.module.css';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 export default function Post({ postData }) {
   const router = useRouter();
@@ -56,7 +57,7 @@ export default function Post({ postData }) {
   );
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths:GetStaticPaths = async context => {
   const allPosts = await getAllPostsWithSlug();
 
   return {
@@ -65,7 +66,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps:GetStaticProps = async ({ params }) => {
   const data = await getPost(params.slug);
 
   return {
