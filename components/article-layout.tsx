@@ -1,11 +1,13 @@
+import React from 'react';
 import styles from '../styles/ArticleLayout.module.css';
 
-type PropsType = {
+const ArticleLayout = ({
+  title,
+  children,
+}: {
   title: string;
-  children: any;
-};
-
-const ArticleLayout = ({ title, children }: PropsType) => (
+  children: React.ReactNode;
+}) => (
   <section className={styles.articlesSection}>
     <div className={styles.articlesContainer}>
       <h2 className={styles.articleTitle}>{title}</h2>
