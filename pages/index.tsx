@@ -16,6 +16,9 @@ import styles from '../styles/Home.module.css';
 /* api */
 import { getPostsWithTopComments, getRecentPosts } from '../lib/api';
 
+/* next */
+import { GetStaticProps } from 'next';
+
 const Home = ({ recentPosts, postsWithTopComments }) => {
   const recent = recentPosts.edges;
   const trending = postsWithTopComments.edges;
@@ -41,7 +44,7 @@ const Home = ({ recentPosts, postsWithTopComments }) => {
 
 export default Home;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async context => {
   const recentPosts = await getRecentPosts();
   const postsWithTopComments = await getPostsWithTopComments();
   return {
