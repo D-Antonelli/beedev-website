@@ -1,6 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from 'next/link';
-
 /* data */
 import { getAllPosts } from '../../lib/api';
 
@@ -11,6 +8,9 @@ import styles from '../../styles/Blog.module.css';
 import Layout from '../../components/layout';
 import ArticleGrid from '../../components/article-grid';
 import HeroPost from '../../components/hero-post';
+
+/* next */
+import { GetStaticProps } from 'next';
 
 const Blog = ({ allPosts: { edges } }) => {
   const heroPost = edges[0]?.node;
@@ -43,7 +43,7 @@ const Blog = ({ allPosts: { edges } }) => {
 
 export default Blog;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async context => {
   const allPosts = await getAllPosts();
   return {
     props: {
