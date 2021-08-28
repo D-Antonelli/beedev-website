@@ -1,10 +1,6 @@
 import styles from '../styles/Tag.module.css';
 
-type PropsType = {
-  name: string;
-};
-
-const Tag = ({ name }: PropsType) => (
+const Tag = ({ name }: {name: string}) : JSX.Element => (
   <div className={styles.tag}>
     <span className={styles.hash}>#</span>
     {name}

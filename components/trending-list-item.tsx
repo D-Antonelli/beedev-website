@@ -1,9 +1,23 @@
+/* styles */
 import styles from '../styles/TrendingList.module.css';
+
+/* svg */
 import CommentSvg from '../svg/comment';
+
+/* nextjs */
 import Link from 'next/link';
 
-
-const TrendingListItem = ({ item: { title, commentCount, slug }, order }) => (
+const TrendingListItem = ({
+  title,
+  comments,
+  slug,
+  order,
+}: {
+  title: string;
+  comments: string;
+  slug: string;
+  order: string;
+}) => (
   <div className={styles.gridContainer}>
     <span className={styles.number}>{order}</span>
     <Link href={`/blog/${slug}`} passHref>
@@ -13,7 +27,7 @@ const TrendingListItem = ({ item: { title, commentCount, slug }, order }) => (
       <span className={styles.icon}>
         <CommentSvg />
       </span>
-      <span className={styles.count}>{commentCount}</span>comments
+      <span className={styles.count}>{comments}</span>comments
     </div>
   </div>
 );
