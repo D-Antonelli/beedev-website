@@ -1,13 +1,15 @@
 import Head from 'next/head';
+import React from 'react';
 import Footer from './footer';
 import Header from './header';
 
-type PropsType = {
-  children: any;
+const Layout = ({
+  children,
+  lightTheme,
+}: {
+  children: React.ReactNode;
   lightTheme?: boolean;
-};
-
-const Layout = ({ children, lightTheme }: PropsType) => (
+}) => (
   <div>
     <Head>
       <title>Beedev</title>
