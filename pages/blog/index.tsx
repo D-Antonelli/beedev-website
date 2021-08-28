@@ -20,12 +20,20 @@ const Blog = ({ allPosts: { edges } }) => {
     <Layout lightTheme={true}>
       <main>
         <section>
-           <HeroPost post={heroPost} />
+          {heroPost && (
+            <HeroPost
+              slug={heroPost.slug}
+              url={heroPost.featuredImage?.node.mediaItemUrl}
+              alt={heroPost.featuredImage?.node.altText}
+              title={heroPost.title}
+              excerpt={heroPost.excerpt}
+            />
+          )}
         </section>
         <section className={styles.allArticlesSection}>
           <div className={styles.allArticlesContainer}>
             <h2 className={styles.allArticlesTitle}>All articles</h2>
-            <ArticleGrid posts={morePosts} blogPage />
+            {morePosts && <ArticleGrid posts={morePosts} blogPage />}
           </div>
         </section>
       </main>
