@@ -1,12 +1,7 @@
 import styles from '../styles/Cta.module.css';
-import Link from 'next/link'; 
+import Link from 'next/link';
 
-type PropsType = {
-  href: string,
-  text: string
-}
-
-const Cta = ({href, text} : PropsType) => {
+const Cta = ({ href, text }: { href: string; text?: string }) => {
   return (
     <Link href={href} passHref>
       <button className={styles.cta}>{text}</button>
