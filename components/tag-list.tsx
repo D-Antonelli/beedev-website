@@ -1,7 +1,7 @@
 import React from 'react';
 import Tag from './tag';
 
-const TagList = ({ list }): JSX.Element =>
+const TagList: Function = ({ list }: {list: string[]}): JSX.Element[] =>
   list?.map((tag: string, index: number) => (
     <Tag key={index.toString()} name={tag} />
   ));
