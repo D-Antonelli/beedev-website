@@ -5,7 +5,13 @@ import blog from '../styles/BlogArticleGrid.module.css';
 /* components */
 import Article from './article';
 
-const ArticleGrid = ({ posts, blogPage }) => {
+const ArticleGrid = ({
+  posts,
+  blogPage,
+}: {
+  posts: any;
+  blogPage?: boolean;
+}) => {
   const styles = blogPage ? blog : home;
   return (
     <div className={styles.articleGrid}>
