@@ -7,17 +7,15 @@ import CommentSvg from '../svg/comment';
 /* nextjs */
 import Link from 'next/link';
 
+/* types */
+import TrendingListType from '../types/TrendingList';
+
 const TrendingListItem = ({
   title,
   comments,
   slug,
   order,
-}: {
-  title: string;
-  comments: string;
-  slug: string;
-  order: string;
-}) => (
+}: TrendingListType) => (
   <div className={styles.gridContainer}>
     <span className={styles.number}>{order}</span>
     <Link href={`/blog/${slug}`} passHref>
