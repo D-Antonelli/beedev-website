@@ -1,4 +1,4 @@
-export default interface Post  {
+export interface Post  {
     slug: string;
     url: string;
     alt: string;
