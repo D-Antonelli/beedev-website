@@ -6,7 +6,7 @@ import blog from '../styles/BlogArticleGrid.module.css';
 import Article from './article';
 
 /* types */
-import Post from '../interfaces/Post';
+import Post from '../types/Post';
 
 interface PostWithExtension extends Post {
   id: string;

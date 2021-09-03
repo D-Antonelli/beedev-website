@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from '../styles/Blog.module.css';
 
 /* interface */
-import Post from '../interfaces/Post';
+import Post from '../types/Post';
 
 interface PostWithExtension extends Post {
   excerpt: string

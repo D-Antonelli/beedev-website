@@ -8,7 +8,7 @@ import TrendingListItem from './trending-list-item';
 import numberFormatter from '../utils/number-formatter';
 
 /* type */
-import Post from '../interfaces/Post';
+import Post from '../types/Post';
 
 interface PostWithExtension extends Post {
   id: string;

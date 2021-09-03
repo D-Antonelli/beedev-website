@@ -6,7 +6,7 @@ import home from '../styles/Article.module.css';
 import blog from '../styles/BlogArticle.module.css';
 
 /* interface */
-import Post from '../interfaces/Post';
+import Post from '../types/Post';
 
 interface Props {
   blogPage?: boolean;
