@@ -8,14 +8,9 @@ import TrendingListItem from './trending-list-item';
 import numberFormatter from '../utils/number-formatter';
 
 /* type */
-import Post from '../types/Post';
+import { TrendingListType } from '../types/TrendingList';
 
-interface PostWithExtension extends Post {
-  id: string;
-  commentCount: string;
-}
-
-const TrendingList = ({ posts }: { posts: { node: PostWithExtension }[] }) => {
+const TrendingList = ({ posts }: TrendingListType) => {
   return (
     <div className={styles.trendingList}>
       {posts.map(({ node }, index) => (

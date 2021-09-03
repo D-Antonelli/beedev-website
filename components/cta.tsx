@@ -1,7 +1,10 @@
 import styles from '../styles/Cta.module.css';
 import Link from 'next/link';
 
-const Cta = ({ href, text }: { href: string; text?: string }) => {
+/* types */
+import { CtaType } from '../types/Cta';
+
+const Cta = ({ href, text }: CtaType) => {
   return (
     <Link href={href} passHref>
       <button className={styles.cta}>{text}</button>

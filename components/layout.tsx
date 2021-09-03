@@ -1,15 +1,14 @@
 import Head from 'next/head';
 import React from 'react';
+
+/* components */
 import Footer from './footer';
 import Header from './header';
 
-const Layout = ({
-  children,
-  lightTheme,
-}: {
-  children: React.ReactNode;
-  lightTheme?: boolean;
-}) => (
+/* types */
+import { LayoutType } from '../types/Layout';
+
+const Layout = ({ children, lightTheme }: LayoutType) => (
   <div>
     <Head>
       <title>Beedev</title>

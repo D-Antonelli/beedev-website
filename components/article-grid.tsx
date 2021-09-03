@@ -6,20 +6,9 @@ import blog from '../styles/BlogArticleGrid.module.css';
 import Article from './article';
 
 /* types */
-import Post from '../types/Post';
+import { GridType } from '../types/Grid';
 
-interface PostWithExtension extends Post {
-  id: string;
-  featuredImage?: { node?: { altText?: string; mediaItemUrl?: string } };
-}
-
-const ArticleGrid = ({
-  posts,
-  blogPage,
-}: {
-  posts: { node: PostWithExtension }[];
-  blogPage?: boolean;
-}) => {
+const ArticleGrid = ({ posts, blogPage }: GridType) => {
   const styles = blogPage ? blog : home;
   return (
     <div className={styles.articleGrid}>

@@ -5,15 +5,12 @@ import Link from 'next/link';
 import home from '../styles/Article.module.css';
 import blog from '../styles/BlogArticle.module.css';
 
-/* interface */
-import Post from '../types/Post';
+/* types */
+import { Post } from '../types/Post';
+import { ArticleType } from '../types/Article';
 
-interface Props {
-  blogPage?: boolean;
-}
-
-const Article = ({alt, url, title, slug, blogPage}: Post & Props) => {
-  const styles = blogPage ? blog: home;
+const Article = ({ alt, url, title, slug, blogPage }: Post & ArticleType) => {
+  const styles = blogPage ? blog : home;
 
   return (
     <div>
