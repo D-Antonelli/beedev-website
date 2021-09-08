@@ -112,20 +112,53 @@ export async function getPost(slug) {
   const data = await fetchAPI(
     `
     fragment PostFields on Post {
-      title
-      excerpt
-      slug
-      date
-      featuredImage {
-        node {
-          sourceUrl
+        id
+        date
+        title
+        slug
+        featuredImage {
+          node {
+            mediaItemUrl
+            altText
+          }
         }
-      }
+        extraPostInfo {
+          authorExcerpt
+          thumbImage {
+            mediaItemUrl
+          }
+        }
     }
     query PostBySlug($id: ID!, $idType: PostIdType!) {
       post(id: $id, idType: $idType) {
         ...PostFields
+        excerpt
         content
+        commentCount
+        comments {
+          edges {
+            node {
+              author {
+                node {
+                  name
+                }
+              }
+              commentedOn {
+                node {
+                  date
+                }
+              }
+              content
+              replies {
+                nodes {
+                  content
+                  id
+                  parentId
+                }
+              }
+            }
+          }
+        }
       }
     }
   `,
@@ -136,6 +169,5 @@ export async function getPost(slug) {
       },
     }
   );
-
   return data;
 }
