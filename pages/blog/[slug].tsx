@@ -1,14 +1,26 @@
+/* eslint-disable @next/next/no-img-element */
+/* next */
 import { useRouter } from 'next/router';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-// data
+/* data */
 import { getAllPostsWithSlug, getPost } from '../../lib/api';
 
-//styles
-import styles from '../../styles/Home.module.css';
-import blogStyles from '../../styles/Blog.module.css';
-import { GetStaticPaths, GetStaticProps } from 'next';
+/* styles */
+import styles from '../../styles/Slug.module.css';
+
+/* components */
+import Layout from '../../components/layout';
+import LayoutContainer from '../../components/layout-container';
+
+/* icons */
+import TwitterIcon from '../../svg/twitter';
+import FacebookIcon from '../../svg/facebook';
+
+/* utils */
+import formatDate from '../../utils/date-formatter';
 
 export default function Post({ postData }) {
   const router = useRouter();
@@ -17,56 +29,83 @@ export default function Post({ postData }) {
     return <p>Hmm.. error</p>;
   }
 
-  const formatDate = (date) => {
-    const newDate = new Date(date);
-
-    return `${newDate.getDate()}/${
-      newDate.getMonth() + 1
-    }/${newDate.getFullYear()}`;
-  };
-
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{postData?.title}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
+    <Layout lightTheme>
+      <main>
         {router.isFallback ? (
           <h2>Loading...</h2>
         ) : (
-          <article className={blogStyles.article}>
-            <div className={blogStyles.postmeta}>
-              <h1 className={styles.title}>{postData.title}</h1>
-              <p>{formatDate(postData.date)}</p>
-            </div>
-            <div
-              className="post-content content"
-              dangerouslySetInnerHTML={{ __html: postData.content }}
-            />
+          <article>
+            <LayoutContainer>
+              <section className={styles.hero}>
+                <div className={styles.mainTitle}>
+                  <h1>{postData.title}</h1>
+                </div>
+                <div className={styles.excerpt}>
+                  <p dangerouslySetInnerHTML={{ __html: postData.excerpt }}></p>
+                </div>
+                <div className={styles.imageContainer}>
+                  <img
+                    src={postData.featuredImage.node.mediaItemUrl}
+                    alt={postData.featuredImage.node.altText}
+                    className={styles.image}
+                  />
+                </div>
+              </section>
+              <section className="article">
+                <div className={styles.bodyWrapper}>
+                  <div className={styles.info}>
+                    <div className={styles.infoLeft}>
+                      <div className={styles.avatarContainer}>
+                        <img
+                          src={postData.extraPostInfo.thumbImage.mediaItemUrl}
+                          alt="avatar"
+                          className={styles.avatar}
+                        />
+                      </div>
+                      <div className={styles.infoContent}>
+                        <p className={styles.author}>
+                          {postData.extraPostInfo.authorExcerpt}
+                        </p>
+                        <div className={styles.articleData}>
+                          <time>{formatDate(postData.date)}</time>
+                          <div>&#8226;</div>
+                          <p>{4} min read</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={styles.infoRight}>
+                      <div>
+                        <FacebookIcon />
+                      </div>
+                      <div>
+                        <TwitterIcon />
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.articleContent}>
+                    <p dangerouslySetInnerHTML={{ __html: postData.content }} className={styles.article}></p>
+                  </div>       
+                </div>
+              </section>
+            </LayoutContainer>
           </article>
         )}
-        <p>
-          <Link href="/blog">
-            <a>back to articles</a>
-          </Link>
-        </p>
       </main>
-    </div>
+    </Layout>
   );
 }
 
-export const getStaticPaths:GetStaticPaths = async context => {
+export const getStaticPaths: GetStaticPaths = async (context) => {
   const allPosts = await getAllPostsWithSlug();
 
   return {
     paths: allPosts.edges.map(({ node }) => `/blog/${node.slug}`) || [],
     fallback: true,
   };
-}
+};
 
-export const getStaticProps:GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const data = await getPost(params.slug);
 
   return {
@@ -74,4 +113,4 @@ export const getStaticProps:GetStaticProps = async ({ params }) => {
       postData: data.post,
     },
   };
-}
+};
