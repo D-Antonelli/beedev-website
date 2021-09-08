@@ -1,9 +1,7 @@
-
 .heroPostContainer {
   width: 56%;
   margin: 0 auto;
   text-align: center;
-  padding-top: 10rem;
 }
 
 .heroImage {
@@ -33,7 +31,6 @@
     margin: 0 auto;
     border-top: var(--border);
     padding-top: var(--text-spacing--lg);
-    padding-bottom: 20rem;
     text-align: center;
 }
 
